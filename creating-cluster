@@ -1,0 +1,13 @@
+ # Install MiniKube (kubernetes platform)
+apt install || apt update
+apt install curl 
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_arm64.deb
+ls
+sudo dpkg -i minikube_latest_arm64.deb
+
+minikube start --driver=docker --nodes=3      # start minikube with 3 nodes one is master(control plane) and others are workers 
+sudo snap install kubectl --classic    #It allows you to deploy and manage applications on Kubernetes clusters
+
+minikube kubectl -- cluster-info 
+kubectl cluster-info
