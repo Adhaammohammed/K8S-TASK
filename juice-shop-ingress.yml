@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1          # Api Version of ingress 
+kind: Ingress
+metadata:
+  name: juice-shop-ingress                 # name of ingreess
+spec:
+  rules:
+    - host: juice-shop.com                 # URL
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: juice-shop-service    # Service name
+                port:
+                  number: 80                # Service Port
